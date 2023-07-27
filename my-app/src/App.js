@@ -12,27 +12,18 @@ const fetchData = async () => {
   return response;
 };
 
-  
-
-
-
-
-
 function App() {
+  const [formData, setformData] = useState({
+    userId: "",
+    id: "",
+    title: " ",
+    body: "",
+  });
 
-
-
-  const [formData , setformData] = useState({ userId: '',
-  id: '',
-  title: " ",
-  body: "" });
-
-
-  const handleInputChange=(event) =>{
-    const{name, value} = event.target;
-    setformData({...formData , [name]:value})
-  }
-
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setformData({ ...formData, [name]: value });
+  };
 
   const PostData = async () => {
     await axios
@@ -40,7 +31,6 @@ function App() {
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
   };
-
 
   const mutation = useMutation(PostData);
 
@@ -52,14 +42,14 @@ function App() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error:{error.message}</div>;
 
-  
-  
-
   return (
     <>
       <div className="m-0 bg-slate-950 w-auto box-border p-20 h-auto">
         <div className="box-border flex justify-center ">
-          <InputForm formData={formData} onInputChange={handleInputChange}></InputForm>
+          <InputForm
+            formData={formData}
+            onInputChange={handleInputChange}
+          ></InputForm>
           <button
             onClick={handleMutation}
             className=" m-2  rounded-sm bg-neutral-200 hover:bg-blue-300 p-2"
