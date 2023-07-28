@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
-import Comment from "./Comment";
 
 export default function Card(props) {
   return (
@@ -15,11 +13,8 @@ export default function Card(props) {
             View Comments...
           </Link>
         </div>
-        <Routes>
-          <Route path="/" element={<></>} />
-          <Route path="/comment" element={<></>} />
-          <Route path="comment/:id" element={<Comment />} />
-        </Routes>
+
+      
       </div>
     </div>
   );

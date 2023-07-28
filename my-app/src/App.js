@@ -3,6 +3,8 @@ import { React, useState } from "react";
 import Card from "./Card";
 import axios from "axios";
 import InputForm from "./InputForm";
+import { Routes, Route } from "react-router-dom";
+import Comment from "./Comment";
 
 const fetchData = async () => {
   const response = await axios
@@ -19,6 +21,7 @@ function App() {
     title: " ",
     body: "",
   });
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -42,6 +45,8 @@ function App() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error:{error.message}</div>;
 
+  
+
   return (
     <>
       <div className="m-0 bg-slate-950 w-auto box-border p-20 h-auto">
@@ -64,6 +69,11 @@ function App() {
             </>
           ))}
         </div>
+        <Routes>
+          <Route path="/" element={<></>} />
+          <Route path="comment/:id" element={<Comment />} />
+          <Route path="/comment" element={<App/>} />
+        </Routes>
       </div>
     </>
   );
