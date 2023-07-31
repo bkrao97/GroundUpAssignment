@@ -57,7 +57,7 @@ export default function Home() {
             Post User
           </button>
         </div>
-        <div className=" m-auto  box-border bg-neutral-200 flex flex-wrap justify-evenly p-10">
+        <div className=" m-auto  box-border bg-neutral-200 flex flex-wrap justify-between p-10">
           {data.map((item) => (
             <>
               <Card title={item.title} id={item.id} body={item.body}></Card>
