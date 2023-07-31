@@ -21,14 +21,14 @@ export default function InputForm({ formData, onInputChange }) {
               onChange={onInputChange}
             ></input>
           }
-          <input
+          {/* <input
             className="m-2 rounded-sm hover:bg-neutral-200  p-2"
             type="text"
             placeholder="Title"
             name="title"
             value={formData.title}
             onChange={onInputChange}
-          ></input>
+          ></input> */}
           <input
             className="m-2 rounded-sm hover:bg-neutral-200 p-2"
             type="email"
