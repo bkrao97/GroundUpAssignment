@@ -21,11 +21,11 @@ export default function Comment() {
     <>
       <div className="m-0 bg-slate-950 w-auto box-border p-20 h-auto">
         <div className="box-border flex justify-center  ">
-          <div className=" m-auto  box-border bg-neutral-200 flex flex-wrap  justify-start p-10">
+          <div className=" m-auto  box-border bg-slate-950 flex flex-wrap  justify-start p-10">
             {data.map((item) => (
               <>
-                <div className="p-5  border-2 w-11/12 shadow-2xl text-ellipsis  m-8 border-gray-400 rounded-md bg-blue-300 ">
-                  <h1 className="text-sm font-bold">{item.name}</h1>
+                <div className=" p-1  border-2 w-auto text-ellipsis  m-8 border-gray-400 rounded-md bg-gray-400 sm:p-5 sm:w-11/12 ">
+                  <h1 className="text-sm font-bold ">{item.name}</h1>
                   <p className=" mt-4">Email: {item.email}</p>
                   <p className=" mt-4">Desc : {item.body}</p>
                 </div>
